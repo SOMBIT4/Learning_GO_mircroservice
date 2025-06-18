@@ -11,9 +11,9 @@ type Config struct {}
 
 func main (){
 	app:= Config{}
-	log.Println("Starting front end service on port %s", webport)
+	log.Printf("Starting front end service on port %s", webport)
     srv:= &http.Server{
-		Addr: fmt.Sprintf(":%s", webport),
+		Addr: fmt.Sprintf("%s", webport),
 		Handler: app.routes(),
 	}
 	err:= srv.ListenAndServe()
